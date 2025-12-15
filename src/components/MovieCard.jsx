@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const MovieCard = ({ title, image }) => {
+export const MovieCard = ({ title, image, movieId }) => {
   const imgUrl = `https://image.tmdb.org/t/p/w342${image}`;
+
   return (
     <StyledWrapper>
-      <StyledImg src={imgUrl} alt={title} />
+      <Link key={title} to={`/movies/${movieId}`}>
+        <StyledImg src={imgUrl} alt={title} />
+      </Link>
     </StyledWrapper>
   );
 }
