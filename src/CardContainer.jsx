@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MovieCard } from "./components/MovieCard";
+import { Loader } from "./components/Loader";
 
 export const CardContainer = () => {
 
@@ -27,12 +28,14 @@ export const CardContainer = () => {
     fetchData();
   },[])
   
-  //TO-DO: insert a loading message and error message
+
   return (
     <div>
-      {popularMovies.map((movie) => (
-        <MovieCard title={movie.title}></MovieCard>
+      {popularMovies.map((movie, index) => (
+        <MovieCard key={index} title={movie.title}></MovieCard>
       ))}
+      {loading && <Loader />}
+      {error && <p>Data is unavailable right now. Try again later!</p>}
     </div>
   );
 }
