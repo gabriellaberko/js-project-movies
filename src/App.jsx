@@ -1,5 +1,10 @@
+import { CardContainer } from "./CardContainer"
+
 export const App = () => {
   return (
-    <h1>Movies</h1>
+    <main>
+      <h1>Movies</h1>
+      <CardContainer />
+    </main>
   )
 }
