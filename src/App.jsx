@@ -1,10 +1,14 @@
-import { CardContainer } from "./components/CardContainer"
+import { Home } from "./pages/Home"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 export const App = () => {
   return (
-    <main>
-      <h1>Movies</h1>
-      <CardContainer />
-    </main>
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
