@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { MovieCard } from "./components/MovieCard";
-import { Loader } from "./components/Loader";
+import { MovieCard } from "./MovieCard";
+import { Loader } from "./Loader";
+import styled from "styled-components";
 
 export const CardContainer = () => {
 
@@ -18,6 +19,7 @@ export const CardContainer = () => {
         }
         const data = await response.json();
         setLoading(false);
+        console.log(data.results);
         setPopularMovies(data.results);
       }
       catch(error) {
@@ -30,12 +32,18 @@ export const CardContainer = () => {
   
 
   return (
-    <div>
+    <StyledWrapper>
       {popularMovies.map((movie, index) => (
-        <MovieCard key={index} title={movie.title}></MovieCard>
+        <MovieCard key={index} title={movie.title} image={movie.poster_path}></MovieCard>
       ))}
       {loading && <Loader />}
       {error && <p>Data is unavailable right now. Try again later!</p>}
-    </div>
+    </StyledWrapper>
   );
 }
+
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
