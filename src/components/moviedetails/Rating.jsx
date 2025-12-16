@@ -1,8 +1,23 @@
+import styled from "styled-components";
 
+export const Rating = ({ rating }) => {
 
-export const Rating = () => {
+  const oneDecimalRating = rating.toFixed(1);
+
   return (
-    <div>
-    </div>
+    <StyledWrapper>
+      <StyledStarImage src="../../../star.png" alt="star" />
+      <h2>{oneDecimalRating}</h2>
+    </StyledWrapper>
   );
 }
+
+const StyledStarImage = styled.img`
+  height: 32px;
+`;
+
+const StyledWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;

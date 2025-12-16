@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { MovieDetailsCards } from "../components/moviedetails/MovieDetailsCard";
 import { Loader } from "../components/assets/Loader";
+import styled from "styled-components";
+
 
 export const MovieDetails = () => {
     const[movieDetails, setMovieDetails] = useState(null);
@@ -9,7 +11,7 @@ export const MovieDetails = () => {
     const[error, setError] = useState(false);
 
     const { id: paramsMovieId } = useParams(); //get movie ID from the url
-
+    
     useEffect(() => {
       const fetchMovieDetails = async () => {
         const APIkey = `269615d5c201f031cd098191b590c560`;
@@ -46,6 +48,26 @@ export const MovieDetails = () => {
   }
 
   return (
-    <MovieDetailsCards movieDetails={movieDetails} />
+    <StyledSection $bgImage={`https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`}>
+      <Link to="/">Movies</Link>
+      <MovieDetailsCards movieDetails={movieDetails} />
+    </StyledSection>
   );
 };
+
+
+const StyledSection = styled.section`
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    ${({ $bgImage }) =>
+      $bgImage 
+        ? `url(${$bgImage})` 
+        : "none"};
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
+`;

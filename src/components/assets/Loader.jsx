@@ -3,10 +3,10 @@ import styled, { keyframes } from "styled-components";
 
 export const Loader = () => {
   return ( 
-    <>
+    <StyledWrapper>
       <StyledLoader></StyledLoader>
       <p>Loading data...</p>
-    </>
+    </StyledWrapper>
   );
 }
 
@@ -32,6 +32,7 @@ const StyledLoader = styled.span`
   position: relative;
   animation: ${rotate} 1s linear infinite;
   margin-top: 32px;
+  color: #ffffff;
   
   &:before {
     content: "";
@@ -39,7 +40,13 @@ const StyledLoader = styled.span`
     position: absolute;
     inset: 0px;
     border-radius: 50%;
-    border: 5px solid #777777;
+    border: 5px solid #ffffff;
     animation: ${prixClipFix} 2s linear infinite ;
   }
+`;
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

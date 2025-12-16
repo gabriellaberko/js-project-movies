@@ -32,7 +32,9 @@ export const Home = () => {
   return (
     <>
       <h1>Movies</h1>
-      <CardContainer popularMovies={popularMovies} loading={loading} error={error}/>
+      {loading && <Loader />}
+      {error && <p>Data is unavailable right now. Try again later!</p>}
+      <CardContainer popularMovies={popularMovies}/>
     </>
   )
 }
