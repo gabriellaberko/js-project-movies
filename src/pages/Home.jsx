@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { CardContainer } from "../components/CardContainer"
-import { Loader } from "../components/Loader";
+import { CardContainer } from "../components/Home/CardContainer";
+import { Loader } from "../components/assets/Loader";
 
 export const Home = () => {
 

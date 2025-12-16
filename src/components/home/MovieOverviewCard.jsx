@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const MovieCard = ({ title, image, movieId }) => {
+export const MovieOverviewCard = ({ title, image, movieId }) => {
   const imgUrl = `https://image.tmdb.org/t/p/w342${image}`;
 
   return (

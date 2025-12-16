@@ -1,15 +1,15 @@
-import { Loader } from "../components/Loader";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { MovieDetailsCards } from "../components/moviedetails/MovieDetailsCard";
+import { Loader } from "../components/assets/Loader";
 
 export const MovieDetails = () => {
-    const[movieDetails, setMovieDetails] = useState();
+    const[movieDetails, setMovieDetails] = useState(null);
     const[loading, setLoading] = useState(true);
     const[error, setError] = useState(false);
 
-    const params = useParams();
-    const paramsMovieId = params.id;
-  
+    const { id: paramsMovieId } = useParams(); //get movie ID from the url
+
     useEffect(() => {
       const fetchMovieDetails = async () => {
         const APIkey = `269615d5c201f031cd098191b590c560`;
@@ -33,9 +33,19 @@ export const MovieDetails = () => {
     },[])
     
 
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <p>Data is unavailable right now. Try again later!</p>;
+  }
+
+  if (!movieDetails) {
+    return null;
+  }
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <MovieDetailsCards movieDetails={movieDetails} />
+  );
+};
