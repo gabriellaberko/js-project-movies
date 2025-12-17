@@ -11,11 +11,11 @@ export const MovieDescription = ({ title, description, rating, genres }) => {
       </StyledTitleWrapper>
       <StyledDescriptionWrapper>
         <StyledGenreWrapper>
-          {genres.map((genre) =>(
-            <StyledParagraph>{genre.name}</StyledParagraph>
+          {genres.map((genre) => (
+            <StyledParagraph key={genre.name}>{genre.name}</StyledParagraph>
           ))}
         </StyledGenreWrapper>
-        <p>{description}</p> 
+        <p>{description}</p>
       </StyledDescriptionWrapper>
     </StyledWrapper>
   );
