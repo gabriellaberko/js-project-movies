@@ -8,7 +8,7 @@ export const MovieDetailsCards = ({ movieDetails }) => {
   return (
     <StyledWrapper>
       <StyledPoster src={`https://image.tmdb.org/t/p/w342${movieDetails.poster_path}`} alt={`movie cover of "${movieDetails.title}"`} />
-      <MovieDescription key={movieDetails.id} title={movieDetails.title} description={movieDetails.overview} rating={movieDetails.vote_average} genres={movieDetails.genres} />
+      <MovieDescription title={movieDetails.title} description={movieDetails.overview} rating={movieDetails.vote_average} genres={movieDetails.genres} />
     </StyledWrapper>
   );
 }
