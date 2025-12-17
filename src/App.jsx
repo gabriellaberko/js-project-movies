@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
- * {
-  box-sizing: border-box;
- }
+ *, *::before, *::after {
+    box-sizing: border-box;
+  }
   body {
     margin: 0;
   }

@@ -2,11 +2,12 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 const StyledArrow = styled.img`
-  height: 3vh;
+  height: 22px;
   width: auto;
 
-
-  
+ @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 22px;
+  }
 `
 const StyledText = styled.div`
 margin: 3px;

@@ -6,7 +6,7 @@ export const MovieDescription = ({ title, description, rating, genres }) => {
   return (
     <StyledWrapper>
       <StyledTitleWrapper>
-        <h1>{title}</h1>
+        <StyledHeading>{title}</StyledHeading>
         <Rating rating={rating} />
       </StyledTitleWrapper>
       <StyledDescriptionWrapper>
@@ -30,9 +30,16 @@ const StyledWrapper = styled.div`
 
 const StyledTitleWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
-  gap: 24px;
+  flex-direction: column;
+  margin-bottom: 24px;
+
+   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+  }
 `;
 const StyledGenreWrapper = styled.div`
   display: flex;
@@ -47,4 +54,8 @@ const StyledParagraph = styled.div`
 
 const StyledDescriptionWrapper = styled.div`
   max-width: 400px;
+`
+
+const StyledHeading = styled.h1`
+  margin: 0;
 `

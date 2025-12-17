@@ -68,8 +68,12 @@ const StyledSection = styled.section`
       ? `url(${$bgImage})`
       : "none"};
   background-size: cover;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+
+   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    
+  }
 `;
