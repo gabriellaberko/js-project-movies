@@ -7,7 +7,7 @@ export const CardContainer = ({ popularMovies, loading, error }) => {
   return (
     <StyledWrapper>
       {popularMovies.map((movie, index) => (
-        <MovieCard key={index} title={movie.title} image={movie.poster_path} movieId={movie.id}></MovieCard>
+        <MovieCard key={index} title={movie.title} image={movie.poster_path} movieId={movie.id} releaseDate={release_date}></MovieCard>
       ))}
       {loading && <Loader />}
       {error && <p>Data is unavailable right now. Try again later!</p>}
