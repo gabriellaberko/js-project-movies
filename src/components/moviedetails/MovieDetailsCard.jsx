@@ -15,10 +15,14 @@ export const MovieDetailsCards = ({ movieDetails }) => {
 
 const StyledWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-end;
-  padding: 50px 15px;
+  padding: 50px;
   gap: 62px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: row;
+  }
 `;
 
 const StyledPoster = styled.img`

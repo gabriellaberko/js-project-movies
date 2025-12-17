@@ -4,29 +4,34 @@ import { Link } from "react-router-dom"
 const StyledArrow = styled.img`
   height: 3vh;
   width: auto;
+
+
   
 `
-const StyledButtonContainer = styled.div`
-   margin: 25px;
+const StyledText = styled.div`
+margin: 3px;
+transition: .3s ease;
+
+   &:hover {
+    transform: translateX(5px)
+  }
+ 
    
 `
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
-  transition: .3s ease;
-
-  &:hover {
-    transform: translateY(-20px)
-  }
-
+  display: flex;
+   flex-direction: row;
+   gap: 3px;
+  margin: 25px 40px;
+ 
 `
 
 export const MovieButton = () => {
   return (
-    <StyledButtonContainer>
-      <StyledLink to="/"><StyledArrow src="/arrow.png" alt="image of arrow" />Movies</StyledLink>
-    </StyledButtonContainer>
+    <StyledLink to="/"><StyledArrow src="/arrow.png" alt="image of arrow" /><StyledText>Movies</StyledText></StyledLink>
   )
 }
 

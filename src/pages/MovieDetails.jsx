@@ -70,5 +70,6 @@ const StyledSection = styled.section`
   background-size: cover;
   height: 100vh;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
+  justify-content: space-between;
 `;
