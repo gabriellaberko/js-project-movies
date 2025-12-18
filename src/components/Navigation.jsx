@@ -44,7 +44,7 @@ const StyledSpan = styled.span`
   display: block;
   height: 4px;
   width: 40px;
-  background: white;
+  background: ${({ theme }) => theme.colors.text};;
   margin: 8px 0;
   border-radius: 2px;
   transition: transform 0.4s ease, opacity 0.3s ease;
@@ -81,7 +81,7 @@ const StyledLink = styled(Link)`
 
 
 const StyledButton = styled.button`
-  color: white;
+  color: ${({ theme }) => theme.colors.text};;
   background-color: transparent;
   padding: 12px;
   border: none;
@@ -92,7 +92,7 @@ const StyledButton = styled.button`
 const StyledNavigationContent = styled.div`
   position: absolute;
   padding: 7px 32px;
-  background: rgba(0, 0, 0, 0.92);
+  background: ${({ theme }) => theme.colors.darkOpacity};
   width: 100vw;
   transition: transform 0.3s ease-in-out, opacity 0.5s ease;
   transform: ${({ $expanded }) =>

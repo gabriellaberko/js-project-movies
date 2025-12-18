@@ -60,8 +60,8 @@ export const MovieDetails = () => {
 const StyledSection = styled.section`
   background-image: 
     linear-gradient(
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.65)
+     ${({ theme }) => theme.colors.opacity},
+     ${({ theme }) => theme.colors.opacity}
     ),
     ${({ $bgImage }) =>
     $bgImage

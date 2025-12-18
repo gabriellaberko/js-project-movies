@@ -29,25 +29,27 @@ const StyledWrapper = styled.div`
   margin: 0;
   position: relative;
   overflow: hidden;
-
-  @media(min-width: 370px) {
+  
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobileSmall}) {
     width: 50%;
   }
-  @media(min-width: 570px) {
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 33.3%;
   }
-  @media(min-width: 820px) {
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 25%;
   }
-  
-    .overlay {
+
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
+    background: ${({ theme }) => theme.colors.mediumOpacity};
+    color: ${({ theme }) => theme.colors.text};
     display: flex;
     align-items: flex-end; /* Puts text at the bottom */
     padding: 20px;
@@ -55,7 +57,7 @@ const StyledWrapper = styled.div`
     transition: opacity 0.3s ease;
   }
 
- &:hover .overlay {
+  &:hover .overlay {
     opacity: 1;
   }
 `;

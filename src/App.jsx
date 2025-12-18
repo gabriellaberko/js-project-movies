@@ -11,6 +11,9 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     margin: 0;
+    background-color: ${({ theme }) => theme.colors.bg};;
+    color: ${({ theme }) => theme.colors.text};
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
 `;
 

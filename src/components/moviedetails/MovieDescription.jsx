@@ -48,7 +48,7 @@ const StyledGenreWrapper = styled.div`
 `;
 
 const StyledParagraph = styled.div`
-  outline: 2px solid white;
+  outline: 2px solid ${({ theme }) => theme.colors.text};
   padding: 4px;
 `;
 
