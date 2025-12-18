@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Rating } from "../moviedetails/Rating";
 
-export const MovieOverviewCard = ({ title, image, movieId, releaseDate }) => {
+export const MovieOverviewCard = ({ title, image, movieId, releaseDate, rating }) => {
   const imgUrl = `https://image.tmdb.org/t/p/w342${image}`;
 
   return (
@@ -11,6 +12,7 @@ export const MovieOverviewCard = ({ title, image, movieId, releaseDate }) => {
         <div className="overlay">
           <div>
             <StyledHeading>{title}</StyledHeading>
+            <Rating rating={rating} />
             <p>Released {releaseDate}</p>
           </div>
         </div>
@@ -57,6 +59,7 @@ const StyledWrapper = styled.div`
 
 const StyledHeading = styled.h2`
   font-size: 40px;
+  margin-bottom: 10px;
 `;
 
 const StyledImg = styled.img`
