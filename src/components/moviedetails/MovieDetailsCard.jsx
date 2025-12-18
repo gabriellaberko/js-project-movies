@@ -11,7 +11,7 @@ export const MovieDetailsCards = ({ movieDetails }) => {
       <MovieDescription title={movieDetails.title} description={movieDetails.overview} rating={movieDetails.vote_average} genres={movieDetails.genres} />
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   display: flex;

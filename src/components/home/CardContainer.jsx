@@ -10,12 +10,10 @@ export const CardContainer = ({ popularMovies }) => {
       ))}
     </StyledWrapper>
   );
-}
+};
 
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-
 `;

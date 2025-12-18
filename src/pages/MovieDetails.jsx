@@ -33,7 +33,7 @@ export const MovieDetails = () => {
       }
     };
     fetchMovieDetails();
-  }, [])
+  }, []);
 
 
   if (loading) {

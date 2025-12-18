@@ -10,7 +10,7 @@ export const Rating = ({ rating }) => {
       <h2>{oneDecimalRating}</h2>
     </StyledWrapper>
   );
-}
+};
 
 const StyledStarImage = styled.img`
   height: 32px;

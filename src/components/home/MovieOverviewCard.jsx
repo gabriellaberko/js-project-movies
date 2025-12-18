@@ -17,7 +17,7 @@ export const MovieOverviewCard = ({ title, image, movieId, releaseDate }) => {
       </Link>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -53,12 +53,11 @@ const StyledWrapper = styled.div`
  &:hover .overlay {
     opacity: 1;
   }
-
 `;
 
 const StyledHeading = styled.h2`
   font-size: 40px;
-`
+`;
 
 const StyledImg = styled.img`
   width: 100%;

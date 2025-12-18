@@ -19,7 +19,7 @@ export const MovieDescription = ({ title, description, rating, genres }) => {
       </StyledDescriptionWrapper>
     </StyledWrapper>
   );
-}
+};
 
 
 const StyledWrapper = styled.div`
