@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Rating = ({ rating }) => {
 
+  if (!rating) return null; //safe guard
   const oneDecimalRating = rating.toFixed(1);
 
   return (

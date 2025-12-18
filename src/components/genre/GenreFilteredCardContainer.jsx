@@ -1,4 +1,5 @@
 import { MovieOverviewCard } from "../home/MovieOverviewCard";
+import { Message } from "../assets/Message";
 import styled from "styled-components";
 import { useParams } from "react-router-dom"
 
@@ -14,8 +15,11 @@ export const GenreFilteredCardContainer = ({ popularMovies }) => {
 
   return (
     <StyledWrapper>
+      {filteredMovies?.length === 0 && (
+      <Message>Unfortunately, there are no genres matching your filter.</Message>
+      )}
       {filteredMovies.map((movie, index) => (
-        <MovieOverviewCard key={index} title={movie.title} image={movie.poster_path} movieId={movie.id} releaseDate={movie.release_date}></MovieOverviewCard>
+        <MovieOverviewCard key={index} title={movie.title} image={movie.poster_path} movieId={movie.id} releaseDate={movie.release_date} rating={movie.vote_average}></MovieOverviewCard>
       ))}
     </StyledWrapper>
   );

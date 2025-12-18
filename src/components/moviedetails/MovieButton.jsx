@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 export const MovieButton = () => {
   return (
-    <StyledLink to="/"><StyledArrow src="/arrow.png" alt="image of arrow" /><StyledText>Movies</StyledText></StyledLink>
+    <StyledLink to="/"><StyledArrow src="/arrow.png" alt="image of arrow" /><StyledText>All Movies</StyledText></StyledLink>
   );
 };
 
@@ -32,6 +32,6 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: row;
   gap: 3px;
-  margin: 25px 40px;
+  margin: 32px 24px;
 `;
 

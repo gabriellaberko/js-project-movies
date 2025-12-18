@@ -8,7 +8,10 @@ export const MovieOverviewCard = ({ title, image, movieId, releaseDate, rating }
   return (
     <StyledWrapper>
       <Link key={title} to={`/movies/${movieId}`}>
-        <StyledImg src={imgUrl} alt={title} />
+        <StyledImg
+          src={imgUrl}
+          alt={`movie cover of "${title}"`}
+        />
         <div className="overlay">
           <div>
             <StyledHeading>{title}</StyledHeading>
