@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MovieDetailsCards } from "../components/moviedetails/MovieDetailsCard";
 import { Loader } from "../components/assets/Loader";
+import { Message } from "../components/assets/Message";
 import styled from "styled-components";
 import { MovieButton } from "../components/moviedetails/MovieButton";
 
@@ -29,29 +30,24 @@ export const MovieDetails = () => {
       }
       catch (error) {
         console.log("Fetch error:", error);
+        setLoading(false);
         setError(true);
       }
     };
     fetchMovieDetails();
   }, []);
-
-
-  if (loading) {
-    return <Loader />;
-  }
-
-  if (error) {
-    return <p>Data is unavailable right now. Try again later!</p>;
-  }
-
-  if (!movieDetails) {
-    return null;
-  }
+  
 
   return (
-    <StyledSection $bgImage={`https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`}>
+    <StyledSection 
+      $bgImage={movieDetails?.backdrop_path
+      ? `https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`
+      : undefined}   
+      >
       <MovieButton />
-      <MovieDetailsCards movieDetails={movieDetails} />
+      {loading && <Loader />}
+      {error && <Message>Data is unavailable right now. Try again later!</Message>}
+      {movieDetails && <MovieDetailsCards movieDetails={movieDetails} />}
     </StyledSection>
   );
 };

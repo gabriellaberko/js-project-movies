@@ -10,7 +10,6 @@ export const Home = ({ popularMovies, genres, loading, error }) => {
     <>
       <Navigation genres={genres} />
       <section>
-        <StyledTitle>Popular Movies</StyledTitle>
         {loading && <Loader />}
         {error && <Message>Data is unavailable right now. Try again later!</Message>}
         <CardContainer popularMovies={popularMovies} />

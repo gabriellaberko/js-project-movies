@@ -11,12 +11,13 @@ export const Navigation = ({ genres }) => {
   };
 
   return (
-    <StyledNav>
+    <StyledNav $expanded={expanded}>
       <StyledButton onClick={handleClick}
         aria-expanded={expanded}
         aria-label="Main menu"
         aria-controls="hamMenuList"
-      >
+        >
+        
         <StyledFirstSpan $expanded={expanded} aria-hidden="true"></StyledFirstSpan>
         <StyledSecondSpan $expanded={expanded} aria-hidden="true"></StyledSecondSpan>
         <StyledThirdSpan $expanded={expanded} aria-hidden="true"></StyledThirdSpan>
@@ -36,18 +37,26 @@ export const Navigation = ({ genres }) => {
 };
 
 const StyledNav = styled.nav`
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: ${({ $expanded, theme }) => $expanded
+    ? theme.colors.darkOpacity
+    : theme.colors.opacity};
   z-index: 3000;
 `;
+
 
 const StyledSpan = styled.span`
   display: block;
   height: 4px;
   width: 40px;
-  background: ${({ theme }) => theme.colors.text};;
+  background: ${({ theme }) => theme.colors.text};
   margin: 8px 0;
   border-radius: 2px;
   transition: transform 0.4s ease, opacity 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 `;
 
 
@@ -81,11 +90,12 @@ const StyledLink = styled(Link)`
 
 
 const StyledButton = styled.button`
-  color: ${({ theme }) => theme.colors.text};;
+  color: ${({ theme }) => theme.colors.text};
   background-color: transparent;
   padding: 12px;
   border: none;
-  z-index: 4000;
+  z-index: 4001;
+  position: relative;
 `;
 
 
@@ -94,8 +104,8 @@ const StyledNavigationContent = styled.div`
   padding: 0 24px 42px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background: ${({ theme }) => theme.colors.darkOpacity};
+  align-items: center;
   width: 100vw;
   transition: transform 0.3s ease-in-out, opacity 0.5s ease;
   transform: ${({ $expanded }) =>
