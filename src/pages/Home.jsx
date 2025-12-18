@@ -1,4 +1,4 @@
-import { CardContainer } from "../components/Home/CardContainer";
+import { CardContainer } from "../components/home/CardContainer";
 import { Navigation } from "../components/Navigation";
 import { Loader } from "../components/assets/Loader";
 import { Message } from "../components/assets/Message";

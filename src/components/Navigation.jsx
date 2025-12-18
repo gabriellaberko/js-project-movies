@@ -91,7 +91,10 @@ const StyledButton = styled.button`
 
 const StyledNavigationContent = styled.div`
   position: absolute;
-  padding: 7px 32px;
+  padding: 0 24px 42px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: ${({ theme }) => theme.colors.darkOpacity};
   width: 100vw;
   transition: transform 0.3s ease-in-out, opacity 0.5s ease;
@@ -106,8 +109,13 @@ const StyledList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-content: center;
   padding: 0;
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  margin: 0 12px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tabletMin}) {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `;
